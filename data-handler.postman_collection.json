@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "57c3584d-136a-4139-9db2-4fea622c3612",
+		"name": "data-handler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33966957"
+	},
+	"item": [
+		{
+			"name": "apis",
+			"item": [
+				{
+					"name": "https://data-pusher-django.onrender.com/api/accounts/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"suraj@gmail.com\",\r\n    \"account_name\": \"suran tk\",\r\n    \"website\": \"https://suraj.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-pusher-django.onrender.com/api/accounts/",
+							"protocol": "https",
+							"host": [
+								"data-pusher-django",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://data-pusher-django.onrender.com/api/destinations/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": 3, \r\n    \"url\": \"https://webhsam.site/xyz\",\r\n    \"http_method\": \"POST\",\r\n    \"headers\": {\r\n        \"APP_ID\": \"1234APPID1234\",\r\n        \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n        \"Content-Type\": \"application/json\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-pusher-django.onrender.com/api/destinations/",
+							"protocol": "https",
+							"host": [
+								"data-pusher-django",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"destinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://data-pusher-django.onrender.com/api/destinations/account_destinations/?account_id=9deede79-a06c-477a-bd0c-6eaafd14ca66",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data-pusher-django.onrender.com/api/destinations/account_destinations/?account_id=9deede79-a06c-477a-bd0c-6eaafd14ca66",
+							"protocol": "https",
+							"host": [
+								"data-pusher-django",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"destinations",
+								"account_destinations",
+								""
+							],
+							"query": [
+								{
+									"key": "account_id",
+									"value": "9deede79-a06c-477a-bd0c-6eaafd14ca66"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://data-pusher-django.onrender.com/server/incoming_data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "CL-X-TOKEN",
+								"value": "5c7a5548-fa0c-48b4-975c-0b4d3574fe6b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"123\",\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"johndoe1@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-pusher-django.onrender.com/server/incoming_data",
+							"protocol": "https",
+							"host": [
+								"data-pusher-django",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"server",
+								"incoming_data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
