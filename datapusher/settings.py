@@ -75,10 +75,20 @@ WSGI_APPLICATION = 'datapusher.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+from urllib.parse import urlparse
+
+DATABASE_URL = 'postgresql://new_db_test_user:LQWc6VWZG9JfsHZVRGJyBd0MLSCYxUdO@dpg-cth4tb3gbbvc73a22tmg-a.singapore-postgres.render.com/new_db_test'
+
+url = urlparse(DATABASE_URL)
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': url.path[1:],  
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port,
     }
 }
 
